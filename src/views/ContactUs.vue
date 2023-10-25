@@ -1,6 +1,7 @@
 <template>
     <div class="contactUs">
       <h1>Esta es la página de Contacto</h1>
+      <QuienesSomos />
     </div>
   </template>
   
@@ -13,4 +14,9 @@
     }
   }
   </style>
+  <script setup>
+import QuienesSomos from '../components/quienesSomos.vue';
+
+
+</script>
   
