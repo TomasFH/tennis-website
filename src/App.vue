@@ -7,7 +7,7 @@
   <!-- Principal/Main -->
 
   <section>
-    <RouterView />
+      <RouterView />
   </section>
 
   <!-- Footer/Pie de página -->
@@ -20,8 +20,8 @@
 
 
 <script setup>
-  import NavBar from './components/navbar.vue'
-  import FooterSection from './components/footer.vue'
+  import NavBar from './components/navBar.vue'
+  import FooterSection from './components/footerSection.vue'
   import { RouterView } from 'vue-router'
 </script>
 
