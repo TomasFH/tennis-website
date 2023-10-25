@@ -1,9 +1,6 @@
 <template>
     <div>
-        
         <h1>Quiénes somos</h1>
-            
-                
             <div class="grid-container">
               <div class="item1"><p>Nuestro objetivo es que disfrutes de nuestras <em>clases de tenis</em>, pensadas para jugadores de todas las edades y niveles. </p> 
               <p>Queremos transmitirte la misma pasión que tenemos por este deporte, que puedas mejorar tanto en tu técnica como en tu estrategia y mentalidad dentro de la cancha.</p>
@@ -22,8 +19,6 @@
               <div class="item5">
                 <img src="../assets/img/final.jpg" width="200" height="270">
               </div>
-    
-              <p><a href=">Inicio</RouterLink">Volver</a></p>
     </div>
 </div>
 </template>

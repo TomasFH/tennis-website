@@ -1,15 +1,23 @@
 <template>
   <div class="about">
-    <h1>Esta es la página de Acerca de</h1>
+    <QuienesSomos />
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    /* min-height: 100vh; */
+  .about{
     display: flex;
-    align-items: center;
+    flex-direction: column;
   }
+  @media (min-width: 1024px) {
+    .about {
+      /* min-height: 100vh; */
+      display: flex;
+      align-items: center;
+    }
 }
 </style>
+
+<script setup>
+  import QuienesSomos from '../components/quienesSomos.vue';
+</script>
