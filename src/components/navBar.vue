@@ -1,7 +1,9 @@
 <template>
     <div class="header">
         <div class="headerRow">
-            <img class="logo" src="https://previews.123rf.com/images/madabatman/madabatman2007/madabatman200700012/150920417-dise%C3%B1o-de-logotipo-de-tenis-abstracto-en-calidad-vectorial.jpg" alt="logo">
+            <a href="/">
+                <img class="logo" src="https://previews.123rf.com/images/madabatman/madabatman2007/madabatman200700012/150920417-dise%C3%B1o-de-logotipo-de-tenis-abstracto-en-calidad-vectorial.jpg" alt="logo">
+            </a>
             <nav>
                 <ul>
                     <RouterLink to="/">Inicio</RouterLink>
@@ -24,6 +26,7 @@
     display: flex;
     justify-content: center;
     width: 80%;
+    font-family: 'Nunito', sans-serif;
 }
 .logo{
     width: 100px;
