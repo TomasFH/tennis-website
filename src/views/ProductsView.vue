@@ -26,20 +26,14 @@
     fetch(`https://nextjs13-recipe-project.vercel.app/api/tennisProducts`)
       .then(response => response.json())
       .then(data => {
-        // console.log(data)
-        console.log(products.value)
         products.value = data
-        console.log(products.value)
       })
   })
-  
-  onBeforeUnmount(() => console.log('me fui'))
   
 </script>
 
 <style>
   .seccionProducto{
-    /* background-color: rgb(86, 12, 12); */
     display: grid;
     grid-template-columns: repeat(3, 30%);
     justify-content: center;
