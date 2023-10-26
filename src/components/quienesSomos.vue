@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Quiénes somos</h1>
-            <div class="grid-container">
+            <div class="who-container">
               <div class="item1"><p>Nuestro objetivo es que disfrutes de nuestras <em>clases de tenis</em>, pensadas para jugadores de todas las edades y niveles. </p> 
               <p>Queremos transmitirte la misma pasión que tenemos por este deporte, que puedas mejorar tanto en tu técnica como en tu estrategia y mentalidad dentro de la cancha.</p>
               <p>Para llevarte a tu mas alto nivel contamos con clases particulares y grupales. Podrás compartir con tus amigos o familia una divertida y sana actividad física.</p>
@@ -23,24 +23,24 @@
 </div>
 </template>
 <style scoped>
- .grid-container {
-          display: grid;
-          grid-template-columns: 600px 200px 200px;
-          gap: 10px;
-          background-color: #f6faf9;
-          padding: 10px;
-        }
-        
-        .grid-container > div {
-          background-color: rgba(255, 255, 255, 0.8);
-          text-align: center;
-          padding: 5px;
-          font-size: 25px;
-        }
-        
-        .item1 {
-          grid-row: 1 / 4;
-        }
-        
-        h1{font-size: 30px;}
+  .who-container {
+    display: grid;
+    grid-template-columns: 600px 200px 200px;
+    gap: 10px;
+    background-color: #f6faf9;
+    padding: 10px;
+  }
+  
+  .who-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 5px;
+    font-size: 25px;
+  }
+  
+  .item1 {
+    grid-row: 1 / 4;
+  }
+  
+  h1{font-size: 30px;}
 </style>
