@@ -18,11 +18,6 @@
   
 <style>
   @media (min-width: 1024px) {
-    .contactUs {
-      /* min-height: 100vh; */
-      display: flex;
-      align-items: center;
-    }
     .container2 {
       display: grid;
       grid-gap: 140px;
