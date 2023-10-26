@@ -6,7 +6,7 @@
 
   <!-- Principal/Main -->
 
-  <section>
+  <section class="mainContent">
       <RouterView />
   </section>
 
@@ -29,8 +29,18 @@
 <style>
   /* Este style no lleva el 'scoped' ya que quiero establecer que todas estas modificaciones se apliquen
       a todo el sitio */
-  body{
+  body {
     margin: 0;
     height: 100vh;
+  }
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 </style>
