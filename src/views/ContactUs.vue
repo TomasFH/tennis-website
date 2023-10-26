@@ -1,6 +1,6 @@
 <template>
     <div class="container2">
-        <h1 class="consulta"> Escribinos!<br>
+        <h1 class="consulta"> ¡Escribinos!<br>
             Dejanos tus datos y nos contactaremos para brindarte un mejor asesoramiento<br>
         </h1>
           <form action="#" class="formulari">
