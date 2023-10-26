@@ -1,0 +1,36 @@
+<template>
+  <!-- Header / Barra de navegación -->
+  <section>
+    <NavBar/>
+  </section>
+
+  <!-- Principal/Main -->
+
+  <section>
+    <RouterView />
+  </section>
+
+  <!-- Footer/Pie de página -->
+
+  <section>
+    <FooterSection/>
+  </section>
+
+</template>
+
+
+<script setup>
+  import NavBar from './components/navbar.vue'
+  import FooterSection from './components/footer.vue'
+  import { RouterView } from 'vue-router'
+</script>
+
+
+<style>
+  /* Este style no lleva el 'scoped' ya que quiero establecer que todas estas modificaciones se apliquen
+      a todo el sitio */
+  body{
+    margin: 0;
+    height: 100vh;
+  }
+</style>
