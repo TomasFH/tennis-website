@@ -17,7 +17,7 @@
 
 <script setup>
   import ProductCard from "../components/productCard.vue";
-  import {ref, onBeforeMount, onBeforeUnmount} from 'vue'
+  import {ref, onBeforeMount} from 'vue'
 
   const products = ref(null);
   
@@ -33,6 +33,38 @@
 </script>
 
 <style>
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .seccionProducto{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  @media (min-width: 481px) {
+    .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .seccionProducto{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .seccionProducto{
     display: grid;
     grid-template-columns: repeat(3, 30%);
@@ -40,11 +72,19 @@
     align-items: center;
     width: 80%;
   }
-@media (min-width: 1024px) {
+}
+@media (min-width: 1281px) {
   .products {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .seccionProducto{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+    align-items: center;
+    width: 80%;
   }
 }
 </style>
