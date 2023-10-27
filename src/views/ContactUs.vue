@@ -1,3 +1,17 @@
+<script setup>
+  /* import the fontawesome core */
+  import { library } from '@fortawesome/fontawesome-svg-core'
+
+  /* import font awesome icon component */
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+  /* import specific icons */
+  import { faPhone } from '@fortawesome/free-solid-svg-icons'
+
+  /* add icons to the library */
+  library.add(faPhone)
+</script>
+
 <template>
   <div class="container2">
       <h1 class="consulta"> ¡Escribinos!<br>
@@ -23,16 +37,20 @@
       <p>
         podes encontrarnos en Antonio Malaver 401, Olivos. ¡Te esperamos!
       </p>
+      <div class="contactoNumero">
+        <font-awesome-icon icon="fa-solid fa-phone" class="iconoTelefono"/>
+        <h4>11-5049-5355</h4>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
   .mapaContainer {
-    margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 80px;
     display: flex;
     align-items: center;
+    background-color: #5ced46;
   }
   .mapa {
     border: 2px black solid;
@@ -45,6 +63,17 @@
   }
   .mapaText p {
     font-size: 2rem;
+  }
+  .contactoNumero {
+    display: flex;
+    align-items: center;
+  }
+  .contactoNumero h4 {
+    margin-left: 20px;
+    font-size: 3rem;
+  }
+  .iconoTelefono {
+    height: 2rem;
   }
 @media (min-width: 1024px) {
   .container2 {
