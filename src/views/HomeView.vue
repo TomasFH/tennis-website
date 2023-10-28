@@ -9,8 +9,12 @@
         <img src="../assets/img/raquetas.jpg" alt="raquetas landing page">
       </div>
       <div class="contentText">
-        <h1>Bienvenidos bla bla bla</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quos, eaque nihil voluptates molestiae veritatis impedit libero quod sed id nemo consequuntur quo odio sit tenetur blanditiis nobis omnis ratione.</p>
+        <h1>¡Bienvenido!</h1>
+        <p>¿Querés aprender tenis?<br>
+          ¿Querés entrenar?<br>
+          ¿Queres perfeccionar tu estilo?<br>
+          <br>
+          ¡Chequeá nuestras opciones!</p>
         <RouterLink to="/products">Ver más</RouterLink>
       </div>
     </div>
@@ -51,6 +55,7 @@
   .contentText h1 {
     font: 700;
     font-size: 3em;
+    text-decoration: underline;
   }
   .content p {
     font: 500;
