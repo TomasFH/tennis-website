@@ -30,10 +30,8 @@
 
   const validateName = () => {
     if (textRegex.test(formData.name)) {
-      console.log("El input contiene solo texto y tiene menos de 50 caracteres.");
       nameError.value = '';
     } else {
-      console.log("El input contiene caracteres no permitidos o tiene más de 50 caracteres.");
       nameError.value = 'El nombre debe ser menor a 50 caracteres y no deben haber números'
     }
   }
@@ -41,11 +39,9 @@
   const validateNumber = () => {
     const numberRegex = /^[0-9]+$/;
     if (numberRegex.test(formData.phone)) {
-      console.log("El input contiene solo números.");
       phoneError.value = '';
     } else {
       phoneError.value = 'Ingrese solo caracteres numéricos';
-      console.log("El input contiene caracteres no numéricos.");
     }
   }
   
