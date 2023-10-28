@@ -1,4 +1,5 @@
 <script setup>
+
   /* import the fontawesome core */
   import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -10,6 +11,56 @@
 
   /* add icons to the library */
   library.add(faPhone)
+
+  import { reactive, ref } from 'vue';
+  
+  const formData = reactive({
+    name: '',
+    phone: '',
+    email: ''
+    // Otros campos del formulario
+  });
+
+  const nameError = ref(null);
+  const phoneError = ref(null);
+  const emailError = ref(null);
+  // Otras referencias para errores de validación
+
+  const textRegex = /^[a-zA-Z]{1,50}$/;
+
+  const validateName = () => {
+    if (textRegex.test(formData.name)) {
+      console.log("El input contiene solo texto y tiene menos de 50 caracteres.");
+      nameError.value = '';
+    } else {
+      console.log("El input contiene caracteres no permitidos o tiene más de 50 caracteres.");
+      nameError.value = 'El nombre debe ser menor a 50 caracteres y no deben haber números'
+    }
+  }
+
+  const validateNumber = () => {
+    const numberRegex = /^[0-9]+$/;
+    if (numberRegex.test(formData.phone)) {
+      console.log("El input contiene solo números.");
+      phoneError.value = '';
+    } else {
+      phoneError.value = 'Ingrese solo caracteres numéricos';
+      console.log("El input contiene caracteres no numéricos.");
+    }
+  }
+  
+  
+  const validateEmail = () => {
+  const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+  if (!emailRegex.test(formData.email)) {
+    emailError.value = 'Ingrese una dirección de correo electrónico válida.';
+  } else {
+    emailError.value = null;
+    }
+  };
+
+  
+
 </script>
 
 <template>
@@ -19,9 +70,12 @@
       </h1>
         <form action="#" class="formulari">
             <fieldset>
-              <input type="text" placeholder="Escribe tu nombre" name="firstname" class="nombre" required><br>
-              <input type="phone" placeholder="Escribe tu teléfono" name="phone" class="telefono" required><br>
-              <input type="email" placeholder="Escribe tu mail" class="mail" required><br>
+              <input type="text" v-model="formData.name" @input="validateName" placeholder="Escribe tu nombre" name="firstname" class="nombre" required><br>
+              <span class="errorMsg" v-if="nameError">{{ nameError }}</span>
+              <input type="phone" v-model="formData.phone" @input="validateNumber" placeholder="Escribe tu teléfono" name="phone" class="telefono" required><br>
+              <span class="errorMsg" v-if="phoneError">{{ phoneError }}</span>
+              <input type="email" v-model="formData.email" @input="validateEmail" placeholder="Escribe tu mail" class="mail" required><br>
+              <span class="errorMsg" v-if="emailError">{{ emailError }}</span>
               <div class="buttonok">
                 <button type="submit" id="btnEnviar">Enviar</button>
               </div>
@@ -74,6 +128,9 @@
   }
   .iconoTelefono {
     height: 2rem;
+  }
+  .errorMsg {
+    color: red;
   }
 @media (min-width: 1024px) {
   .container2 {
