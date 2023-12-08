@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Editar Producto {{ $route.params.id }}</h2>
-        <form @submit.prevent="editarProducto">
+        <form @submit.prevent="modificar">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre:</label>
             <input type="text" v-model="producto.nombre" class="form-control" id="nombre" required>
@@ -24,53 +24,47 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-            producto: {
-                id: 0,  // Puedes inicializarlo con el ID correcto obtenido de la ruta o mediante alguna lógica
-                nombre: '',
-                precio: 0,
-                stock: 0,
-                imagen: '',
-            },
-            };
+export default {
+    data() {
+        const {id, nombre, precio, stock, imagen} = this.$route.params
+        return {
+        producto: {
+            id,
+            nombre,
+            precio,
+            stock,
+            imagen,
+            url: 'https://MarcelaNapoli.pythonanywhere.com/productos/' + id,
         },
-        methods: {
-            // Puedes implementar la lógica de obtener el producto por ID desde tu fuente de datos (API, Vuex, etc.)
-            obtenerProductoPorId(productId) {
-            // Aquí puedes realizar una solicitud a tu API o cargar el producto desde donde lo almacenes
-            // Simulación de carga de datos
-            this.producto = {
-                id: productId,
-                nombre: 'Nombre del Producto',
-                precio: 20,
-                stock: 50,
-                imagen: 'https://example.com/imagen.jpg',
+        };
+    },
+    methods: {
+        modificar() {
+            var options = {
+            body: JSON.stringify({
+                nombre: this.producto.nombre,
+                precio: this.producto.precio,
+                stock: this.producto.stock,
+                imagen: this.producto.imagen
+            }),
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            redirect: 'follow'
             };
-            },
-            editarProducto() {
-            // Puedes implementar la lógica para enviar la actualización a tu fuente de datos (API, Vuex, etc.)
-            console.log('Guardando cambios para el producto:', this.producto);
-            // Aquí deberías realizar una solicitud a tu API o enviar la actualización donde sea necesario
-            // Después de guardar, puedes redirigir al usuario a la página de detalles o a donde prefieras
-            },
-        },
-        created() {
-            // Obtén los parámetros de la ruta
-            const { id, nombre, precio, stock, imagen } = this.$route.params;
-            console.log(this.$route.params)
 
-            // Asigna los parámetros al objeto producto
-            this.producto = {
-                id: parseInt(id),
-                nombre: nombre,
-                precio: parseFloat(precio),
-                stock: parseInt(stock),
-                imagen: imagen
-            };
+            fetch(this.producto.url, options)
+            .then(() => {
+                alert("Registro modificado");
+                console.log(this.producto.url);
+                this.$router.push('/crud');
+            })
+            .catch((err) => {
+                console.error(err);
+                alert("Error al Modificar");
+            });
         },
-    };
+    },
+};
 </script>
 
 <style scoped>

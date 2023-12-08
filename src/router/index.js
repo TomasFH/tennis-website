@@ -5,6 +5,7 @@ import ContactUs from '../views/ContactUs.vue'
 import ProductsView from '../views/ProductsView.vue'
 import CrudView from '../views/CrudView.vue'
 import EditView from '../views/EditView.vue'
+import NewProduct from '../views/NewProductView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,9 +36,9 @@ const router = createRouter({
       component: CrudView
     },
     {
-      path: '/crud',
-      name: 'crud',
-      component: CrudView
+      path: '/crud/newProduct',
+      name: 'new-product',
+      component: NewProduct
     },
     {
       path: '/edit/:id&:nombre&:precio&:stock&:imagen',

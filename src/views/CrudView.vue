@@ -46,7 +46,7 @@
             <div id="app" class="container">
                 <h1>Productos</h1>
                 <br>
-                <a class="btn btn-primary" href="producto_nuevo.html">Nuevo</a>
+                <router-link class="btn btn-primary" to="/crud/newProduct">Nuevo</router-link>
                 <br><br>
 
                 <div v-if="error">
@@ -155,7 +155,6 @@
             fetch(this.url, options)
             .then(() => {
                 alert('Registro grabado');
-                window.location.href = './productos.html';
             })
             .catch((err) => {
                 console.error(err);
