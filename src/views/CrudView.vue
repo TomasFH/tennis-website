@@ -105,7 +105,7 @@
         data() {
         return {
             productos: [],
-            url: 'http://MarcelaNapoli.pythonanywhere.com/productos',
+            url: 'https://MarcelaNapoli.pythonanywhere.com/productos',
             error: false,
             cargando: true,
             id: 0,
