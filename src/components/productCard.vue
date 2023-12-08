@@ -1,6 +1,6 @@
 <template>
     <div class="productCard">
-        <h1>Producto {{ props.nombre }}</h1>
+        <h1>{{ props.nombre }}</h1>
         <input type="image" :src="props.image" alt="product image">
         <h4>Precio: {{ props.precio }}</h4>
     </div>

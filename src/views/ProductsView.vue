@@ -23,10 +23,11 @@
   
   onBeforeMount(() => {
     //Obtengo los productos desde una API:
-    fetch(`https://nextjs13-recipe-project.vercel.app/api/tennisProducts`)
+    fetch(`https://marcelanapoli.pythonanywhere.com/productos`)
       .then(response => response.json())
       .then(data => {
         products.value = data
+        console.log(products.value)
       })
   })
   
