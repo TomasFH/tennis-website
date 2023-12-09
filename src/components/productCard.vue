@@ -12,7 +12,6 @@
         background-color: white;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         margin: 5% 10%;
         border: 1px rgba(0, 0, 0, 0.3) solid;
         padding: 5px 10px;
@@ -21,6 +20,11 @@
         transform: scale(1.03);
         transition: .2s;
     }
+    .productCard h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    
     .productCard:hover {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         transform: scale(1.05);
@@ -28,6 +32,14 @@
     
     .productCard input {
         width: 80%;
+    }
+    @media (min-width: 481px) {
+        .productCard h1{
+            font-size: 20px;
+        }
+        .productCard h4{
+            font-size: 16px;
+        }
     }
 </style>
 
