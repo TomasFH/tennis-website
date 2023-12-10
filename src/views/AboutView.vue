@@ -6,12 +6,13 @@
 
 <style>
   .about{
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
   }
   @media (min-width: 1024px) {
     .about {
-      /* min-height: 100vh; */
+      margin: 0;
       display: flex;
       align-items: center;
     }
