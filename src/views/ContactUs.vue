@@ -60,23 +60,24 @@
 </script>
 
 <template>
-  <div class="container2">
-      <h1 class="consulta"> ¡Escribinos!<br>
-          Dejanos tus datos y nos contactaremos para brindarte un mejor asesoramiento<br>
+    <div class="container2">
+      <h1 class="consulta">
+        ¡Escribinos!<br>
+        Dejanos tus datos y nos contactaremos para brindarte un mejor asesoramiento<br>
       </h1>
-        <form action="#" class="formulari">
-            <fieldset>
-              <input type="text" v-model="formData.name" @input="validateName" placeholder="Escribe tu nombre" name="firstname" class="nombre" required><br>
-              <span class="errorMsg" v-if="nameError">{{ nameError }}</span>
-              <input type="phone" v-model="formData.phone" @input="validateNumber" placeholder="Escribe tu teléfono" name="phone" class="telefono" required><br>
-              <span class="errorMsg" v-if="phoneError">{{ phoneError }}</span>
-              <input type="email" v-model="formData.email" @input="validateEmail" placeholder="Escribe tu mail" class="mail" required><br>
-              <span class="errorMsg" v-if="emailError">{{ emailError }}</span>
-              <div class="buttonok">
-                <button type="submit" id="btnEnviar">Enviar</button>
-              </div>
-            </fieldset>
-        </form>
+      <form action="#" class="formulari">
+        <fieldset>
+          <input type="text" v-model="formData.name" @input="validateName" placeholder="Escribe tu nombre" name="firstname" class="nombre" required><br>
+          <span class="errorMsg" v-if="nameError">{{ nameError }}</span>
+          <input type="phone" v-model="formData.phone" @input="validateNumber" placeholder="Escribe tu teléfono" name="phone" class="telefono" required><br>
+          <span class="errorMsg" v-if="phoneError">{{ phoneError }}</span>
+          <input type="email" v-model="formData.email" @input="validateEmail" placeholder="Escribe tu mail" class="mail" required><br>
+          <span class="errorMsg" v-if="emailError">{{ emailError }}</span>
+          <div class="buttonok">
+            <button type="submit" id="btnEnviar">Enviar</button>
+          </div>
+        </fieldset>
+      </form>
   </div>
   <div class="mapaContainer">
     <div class="mapa">
@@ -95,13 +96,15 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   .mapaContainer {
-    padding: 0 80px;
+    padding: 10px; /* Reduzco el padding para pantallas más pequeñas */
     display: flex;
+    flex-direction: column; /* Cambio la dirección a columna para tamaños pequeños */
     align-items: center;
     background-color: #5ced46;
   }
+
   .mapa {
     border: 2px black solid;
   }
@@ -128,67 +131,117 @@
   .errorMsg {
     color: red;
   }
-@media (min-width: 1024px) {
+
   .container2 {
-    display: grid;
-    grid-gap: 140px;
-    padding: 20px 10px 69px 30px;
-    grid-template-columns: 220px 220px 220px;
-    background-color: white;
-    grid-template-areas:
-      "consulta consulta formulario"
-      "consulta consulta formulario";
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
   }
+
   .consulta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 60px;
-    margin: 0;
-    font-size: 40px;
-    background-color: white;
-    grid-area: consulta;
-    font-family: 'Nunito', sans-serif;
-  }
-  .formulari {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    grid-area: formulario;
-  }
-  .formulari input {
-    padding: 5px;
-    margin: 10px;
-    width: 30vw;
-    background-color: #c8e3c5;
-    color: black;
-    font-size: 20px;
-  }
-
-  .formulari fieldset {
-    padding: 5px;
-    background-color: white;
-    color: black;
-    font-size: 20px;
-  }
-
-  .formulari button {
-    background-color: green;
-    color: white;
-    padding: 9px;
-    margin: 30px;
     font-size: 1.5rem;
-    font-family: 'Nunito', sans-serif;
-    border-radius: .5em;
+  }
+
+  .formulari {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .formulari input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .errorMsg {
+    color: red;
+    display: block;
+    margin-top: 5px;
   }
 
   .buttonok {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
   }
-}
 
+  .buttonok button {
+    background-color: #5ced46;
+  }
+
+  @media (max-width: 768px) {
+    .consulta {
+      font-size: 1.2rem;
+    }
+
+    .formulari {
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container2 {
+      display: grid;
+      grid-gap: 140px;
+      padding: 20px 10px 69px 30px;
+      grid-template-columns: 220px 220px 220px;
+      background-color: white;
+      grid-template-areas:
+        "consulta consulta formulario"
+        "consulta consulta formulario";
+    }
+    .consulta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 60px;
+      margin: 0;
+      font-size: 40px;
+      background-color: white;
+      grid-area: consulta;
+      font-family: 'Nunito', sans-serif;
+    }
+    .formulari {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      grid-area: formulario;
+    }
+    .formulari input {
+      padding: 5px;
+      margin: 10px;
+      width: 30vw;
+      background-color: #c8e3c5;
+      color: black;
+      font-size: 20px;
+    }
+
+    .formulari fieldset {
+      padding: 5px;
+      background-color: white;
+      color: black;
+      font-size: 20px;
+    }
+
+    .formulari button {
+      background-color: #5ced46;
+      color: black;
+      padding: 9px;
+      margin: 30px;
+      font-size: 1.5rem;
+      font-family: 'Nunito', sans-serif;
+      border-radius: .5em;
+    }
+
+    .buttonok {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media (min-width: 768px) {
+    .mapaContainer {
+      padding: 0 80px; /* Restauro el padding original para pantallas más grandes */
+      flex-direction: row; /* Vuelvo a la dirección por defecto para tamaños mayores */
+    }
+  }
 </style>
-
-  
