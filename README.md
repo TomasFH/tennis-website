@@ -2,7 +2,7 @@ Trabajo realizado con Vue 3.
 
 Dirección del proyecto: https://centro-naval-olivos.vercel.app/
 
-API de la lista de productos utilizada en el proyecto: https://nextjs13-recipe-project.vercel.app/api/tennisProducts
+API de la lista de productos utilizada en el proyecto: https://centro-naval-olivos.vercel.app/crud
 
 Documentación Preliminar del Proyecto –
 Sitio Web Institucional de Academia de Tenis
