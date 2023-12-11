@@ -63,6 +63,8 @@ Contacto:
 Tomás Holgado: tomasfh98@hotmail.com
 Noelia Alcaraz:  noeliarocioalcaraz@gmail.com
 Marcela Napoli:  marcelanapoli100@gmail.com
+Renzo Elian Dipierri: renzodipierri@outlook.com
 
 Fecha de Entrega:
  ● viernes 27 de octubre de 2023
+Fecha de Entrega TP Completo: Lunes 11 de Diciembre de 2023
